@@ -1,0 +1,26 @@
+{
+    "visual": {
+        "name": "password-slicer",
+        "displayName": "password slicer",
+        "guid": "passwordSlicer112",
+        "visualClassName": "Visual",
+        "version": "1.1.0.2",
+        "description": "Customizable slicer that enables searching within one or more text categories",
+        "supportUrl": "https://github.com/ggorski01",
+        "gitHubUrl": "https://github.com/ggorski01"
+    },
+    "apiVersion": "5.10.0",
+    "author": {
+        "name": "Giovann Gorski",
+        "email": "https://github.com/ggorski01"
+    },
+    "assets": {
+        "icon": "assets/icon.png"
+    },
+    "externalJS": null,
+    "style": null,
+    "capabilities": "capabilities.json",
+    "dependencies": null,
+    "stringResources": [],
+    "version": "1.1.0.0"
+}
