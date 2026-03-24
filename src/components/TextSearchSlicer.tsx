@@ -116,7 +116,9 @@ class TextSearchSlicer extends React.Component<ITextSearchSlicerProps, ITextSear
     private onTextInputBlur(e: React.FocusEvent<HTMLInputElement, Element>) {
         if (!e.relatedTarget || (!e.relatedTarget.classList.contains("input-button") && !e.relatedTarget.classList.contains("target-button"))) {
             this.setState(prevState => ({
-                inputText: prevState.currentFilterValue || ""
+                inputText: prevState.currentFilterValue !== null && prevState.currentFilterValue !== undefined
+                    ? prevState.currentFilterValue
+                    : ""
             }));
         }
     }
@@ -132,8 +134,9 @@ class TextSearchSlicer extends React.Component<ITextSearchSlicerProps, ITextSear
     private applyFilter(newTargetIndex: number = null) {
         const targetIndex = newTargetIndex === null ? this.state.currentTargetIndex : newTargetIndex;
 
-        if (this.state.inputText) {
-            this.props.textSearchFilterService.setFilter(this.state.inputText, this.state.targets[targetIndex]);
+        const value = this.state.inputText;
+        if (value !== null && value !== undefined && value !== "") {
+            this.props.textSearchFilterService.setFilter(value, this.state.targets[targetIndex]);
         }
         else {
             this.props.textSearchFilterService.clearFilter();
@@ -201,7 +204,7 @@ class TextSearchSlicer extends React.Component<ITextSearchSlicerProps, ITextSear
                                             <input
                                                 className="input-field"
                                                 placeholder={this.state.formattingSettings?.inputCard?.placeholderString.value}
-                                                type="Password"
+                                                type="password"
                                                 value={this.state.inputText}
                                                 onChange={this.onTextInputChange}
                                                 onKeyDown={this.onTextInputKeyDown}

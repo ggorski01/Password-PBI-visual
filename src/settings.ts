@@ -156,13 +156,13 @@ export class InputFormattingCard extends FormattingSettingsCard {
 
     public placeholderString = new formattingSettings.TextInput({
         name: "placeholderString",
-        displayName: "Placeholder string",
-        value: "login",
-        placeholder: "login"
+        displayName: "Input Placeholder",
+        value: "Placeholder",
+        placeholder: "Placeholder"
     });
 
     name: string = "inputFormatting";
-    displayName: string = "Input field";
+    displayName: string = "Text Field";
     slices: FormattingSettingsSlice[] = [
         this.fontColor, 
         this.backgroundColor,
@@ -202,7 +202,7 @@ export class InputActionFormattingCard extends FormattingSettingsCard {
     });
 
     name: string = "inputActionFormatting";
-    displayName: string = "Input field action";
+    displayName: string = "Field Buttons";
     slices: FormattingSettingsSlice[] = [
         this.fontColor,
         this.hoverFontColor,
@@ -297,6 +297,6 @@ export class VisualFormattingSettingsModel extends FormattingSettingsModel {
         this.generalCard,
         this.inputCard,
         this.inputActionCard,
-        this.targetCard
+        //this.targetCard
     ];
 }
